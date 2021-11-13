@@ -5,5 +5,14 @@
         <h1>
             시험해볼게
         </h1>
+
+       <form action = "/account/hello_world/" method = "post">
+        <!-- 보안기능을 하는 토큰           -->
+           {% csrf_token %}
+            <input type = "submit" class="btn btn-primary" value = "POST">
+        <h1>
+            {{text}}
+        </h1>
+       </form>
     </div>
 {% endblock %}
