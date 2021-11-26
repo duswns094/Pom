@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div>
+   <div style = "text-align: center; max-width: 400px; margin: 4rem auto">
+       <h2 style="margin-bottom: 2rem;">
+           {{ target_article.title }}
+       </h2>
+
+       {% if target_article.image %}
+       <img src="{{ target_article.image.url}}", alt=""
+       style="text-align:center; border-radius: 1rem; margin-bottom:2rem;">
+       {% else %}
+           이미지가 없습니다.
+       {% endif %}
+       <p style="margin-bottom: 2rem;">
+           {{ target_article.content }}
+       </p>
+
+       <a href="{% url 'articleapp:update' pk=target_article.pk %}" class='btn btn-dark rounded-pill col-8 mt-4'>
+           Update Article
+       </a>
+       <a href="{% url 'articleapp:delete' pk=target_article.pk %} "class='btn btn-danger rounded-pill col-8 mt-4'>
+           Delete Article
+       </a>
+
+   </div>
+  </div>
+
+
+{% endblock %}

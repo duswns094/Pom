@@ -20,7 +20,11 @@
   }
 
 </style>
-
+  <div style="text-align: center;">
+    <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
+      Create Article
+    </a>
+  </div>
   <div class="container">
   <div class="item1">
     <img src="https://picsum.photos/200/300"></img>
@@ -38,10 +42,16 @@
   <div class="item12"><img src="https://picsum.photos/200/300"></img></div>
   <div class="item13"><img src="https://picsum.photos/200/300"></img></div>
   </div>
+  <div style="text-align: center;">
+    <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
+      Create Article
+    </a>
+  </div>
 
   <script src="{% static 'JS/magicgrid.js' %}">
 
   </script>
+
 
 
 {% endblock %}
