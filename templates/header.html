@@ -2,25 +2,25 @@
     <h1 class="Pom_logo">
         Pom
     </h1>
-    <div style="">
-        <a href="{% url 'articleapp:list' %}">
+    <div style="" class="pom_header_navbar">
+        <a href="{% url 'articleapp:list' %}" class="pom_header_nav">
             <span>메인</span>
         </a>
-        <a href="{% url 'projectapp:list' %}">
+        <a href="{% url 'projectapp:list' %}" class="pom_header_nav">
             <span>프로젝트</span>
         </a>
         {% if not user.is_authenticated %}
-        <a href="{% url 'accountapp:login' %}?next={{request.path}}">
+        <a href="{% url 'accountapp:login' %}?next={{request.path}}" class="pom_header_nav">
             <span>로그인</span>
         </a>
-        <a href="{% url 'accountapp:create' %}">
+        <a href="{% url 'accountapp:create' %}" class="pom_header_nav">
             <span>회원가입</span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+        <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pom_header_nav">
             <span>프로필</span>
         </a>
-        <a href="{% url 'accountapp:logout' %}?next={{request.path}}">
+        <a href="{% url 'accountapp:logout' %}?next={{request.path}}" class="pom_header_nav">
             <span>로그아웃</span>
         </a>
         {% endif %}

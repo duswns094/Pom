@@ -21,9 +21,18 @@
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 a:hover {
     color: black;
     text-decoration: none;
+}
+
+.pom_header_nav {
+    margin: 0 0.5rem
+}
+
+.pom_header_navbar{
+    margin: 1rem 0;
 }
