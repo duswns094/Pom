@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap4 %}
 {% block content %}
 
   <div>
@@ -20,9 +20,9 @@
        {% else %}
            이미지가 없습니다.
        {% endif %}
-       <p style="margin-bottom: 2rem;">
-           {{ target_article.content }}
-       </p>
+       <div style="margin-bottom: 2rem; text-align: left;">
+           {{ target_article.content | safe }}
+       </div>
        {% if target_article.writer == request.user %}
        <a href="{% url 'articleapp:update' pk=target_article.pk %}" class='btn btn-dark rounded-pill col-3'>
            Update
