@@ -9,3 +9,6 @@ class Project(models.Model):
     content = models.TextField(null=True)
 
     created_at = models.DateField(auto_now=True, null=True)
+
+    def __str__(self):
+        return f'{self.title}'
