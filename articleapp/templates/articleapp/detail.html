@@ -4,9 +4,35 @@
 
   <div>
    <div style = "text-align: center; max-width: 700px; margin: 4rem auto">
-       <h2 style="margin-bottom: 2rem;">
+       <h1 style="margin-bottom: 1rem;">
            {{ target_article.title }}
-       </h2>
+       </h1>
+       <div style="height: 2rem; margin-bottom: 1rem;" >
+            <a href ="{% url 'likeapp:like' %}?article_pk={{ target_article.pk }}">
+               <i class = "material-icons" style="vertical-align: middle; font-size:2.2rem; color:skyblue;">
+                   sentiment_very_satisfied
+               </i>
+            </a>
+           <span style="vertical-align: middle; font-size:1.2rem">
+               {{ target_article.like }}
+           </span>
+           <a href ="{% url 'sosoapp:soso' %}?article_pk={{ target_article.pk }}">
+               <i class = "material-icons" style="vertical-align: middle; font-size:2.2rem; color:orange;">
+                   sentiment_satisfied
+               </i>
+           </a>
+           <span style="vertical-align: middle; font-size:1.2rem">
+               {{ target_article.soso }}
+           </span>
+           <a href ="{% url 'dislikeapp:dislike' %}?article_pk={{ target_article.pk }}">
+               <i class = "material-icons" style="vertical-align: middle; font-size:2.2rem; color:coral;">
+                   sentiment_very_dissatisfied
+               </i>
+           </a>
+           <span style="vertical-align: middle; font-size:1.2rem">
+               {{ target_article.dislike }}
+           </span>
+       </div>
        <h5>
            작성자: {{ target_article.writer.profile.nickname }}
        </h5>
