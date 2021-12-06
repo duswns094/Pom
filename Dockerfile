@@ -2,7 +2,7 @@ FROM python:3.10.0
 
 WORKDIR /home/
 
-RUN echo "testing"
+RUN echo "testing123"
 
 RUN git clone https://github.com/duswns094/Pom.git
 
